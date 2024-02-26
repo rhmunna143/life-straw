@@ -5,6 +5,7 @@ import Technology from "../pages/technology/Technology";
 import Support from "../pages/Support/Support";
 import Shop from "../pages/shop/Shop";
 import CorporateSales from "../pages/corporateSales/CorporateSales";
+import Cart from "../pages/cart/Cart";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
             {
                 path: "/corporate-sales",
                 element: <CorporateSales />
+            },
+
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ]
     }
