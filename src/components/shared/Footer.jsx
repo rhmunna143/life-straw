@@ -3,9 +3,9 @@ import Container from "./Container";
 const Footer = () => {
     return (
         <>
-            <footer className="bg-footerBg pb-10 pt-20 w-full">
+            <footer className="bg-footerBg pb-10 pt-32 w-full">
                 <Container>
-                    <div className="footer-container">
+                    <div className="footer-container flex flex-col lg:flex-row justify-between gap-4 md:gap-10 lg:gap-40 mx-auto w-fit">
                         <div className="logo menu">
                             <div className="logo">
                                 <svg width="260" height="60" viewBox="0 0 395 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,6 +69,40 @@ const Footer = () => {
                                         </svg>
                                     </a>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="right grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 md:mt-0 gap-5 lg:gap-0">
+                            <div className="flex flex-col gap-4">
+                                <a className="text-lg font-bold uppercase">Support</a>
+                                <a className="font-medium">Support Centre</a>
+                                <a className="font-medium">FAQs</a>
+                                <a className="font-medium">Warranty & Returns</a>
+                                <a className="font-medium">Shipping</a>
+                            </div>
+
+                            <div className="flex flex-col gap-4">
+                                <p className="text-lg font-bold uppercase">PRODUCTS</p>
+                                <a className="font-medium">Customization</a>
+                                <a className="font-medium">Shop All</a>
+                                <a className="font-medium">Straws</a>
+                                <a className="font-medium">Bottles</a>
+                                <a className="font-medium">Pitchers</a>
+                            </div>
+
+                            <div className="flex flex-col gap-4">
+                                <p className="text-lg font-bold uppercase">ABOUT</p>
+                                <a className="font-medium">Our Story</a>
+                                <a className="font-medium">Meet the Team</a>
+                                <a className="font-medium">Careers</a>
+                                <a className="font-medium">Blog</a>
+                            </div>
+
+                            <div className="flex flex-col gap-4">
+                                <p className="text-lg font-bold uppercase">CONTACT US</p>
+                                <p>012 2346 2345</p>
+                                <p>55, 7th floor, Panthopath, Dhaka-1234</p>
+                                <a href="https://www.lifestraw.co" className="font-medium text-black no-underline">www.lifestraw.co</a>
                             </div>
                         </div>
                     </div>
