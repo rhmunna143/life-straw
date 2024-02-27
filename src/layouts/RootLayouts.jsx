@@ -1,11 +1,15 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../components/shared/NavBar";
+import Footer from "../components/shared/Footer";
 
 const RootLayouts = () => {
     return (
-        <div>
+        <div style={{ overflowX: "hidden" }}>
             <NavBar />
-            <Outlet />
+            <div className="min-h-screen">
+                <Outlet />
+            </div>
+            <Footer />
         </div>
     );
 };

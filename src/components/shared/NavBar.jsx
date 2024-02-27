@@ -42,9 +42,9 @@ const NavBar = () => {
                         </Link>
                     </div>
 
-                    <div className="menu-2 bg-primaryBg py-3 h-5 pl-10 pr-5 rounded-[33px] flex items-center gap-4">
+                    <div className="menu-2 bg-primaryBg py-3 h-5 pl-11 pr-5 rounded-[33px] flex items-center gap-4">
                         <Search />
-                        <Link>
+                        <Link to={"/cart"}>
                             <img src={cartIcon} alt="cart icon" />
                         </Link>
 

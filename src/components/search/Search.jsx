@@ -1,4 +1,6 @@
 // Search.js
+
+import searchIcon from "../../assets/icons/material-symbols_search.svg";
 import { useState } from 'react';
 
 const Search = () => {
@@ -14,7 +16,7 @@ const Search = () => {
                 className="absolute right-0 top-1/2 bottom-1/2 flex justify-start items-center cursor-pointer"
                 onClick={handleIconClick}
             >
-                <svg
+                {/* <svg
                     className="h-5 w-5 text-[#4D6067]"
                     fill="none"
                     stroke="currentColor"
@@ -27,7 +29,9 @@ const Search = () => {
                         strokeWidth="2"
                         d="M21 21l-4-4m-2 0a8 8 0 110-16 8 8 0 010 16z"
                     ></path>
-                </svg>
+                </svg> */}
+
+                <img src={searchIcon} alt="search icon" />
             </div>
             <input
                 type="text"
