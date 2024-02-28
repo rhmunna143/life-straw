@@ -18,7 +18,7 @@ const DraftBottleAnimation = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const triggerPoint = window.innerHeight * 0.4; // 50vh
+            const triggerPoint = window.innerHeight * 0.2; // 50vh
 
             if (scrollPosition > triggerPoint && !scrollDown) {
                 setScrollDown(true);

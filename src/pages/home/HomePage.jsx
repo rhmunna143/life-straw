@@ -14,11 +14,9 @@ const HomePage = () => {
             <DraftBottleAnimation />
 
 
-
             {/* second about banner section */}
 
             <AboutWhyLifeStraw />
-
 
 
             {/* video section */}
@@ -26,16 +24,12 @@ const HomePage = () => {
             <VideoSection />
 
 
-
             {/* invest section */}
 
             <InvestSection />
 
 
-
             {/* slider 1 */}
-
-
 
 
 
@@ -45,10 +39,11 @@ const HomePage = () => {
 
 
 
-
             {/* footer cover photo */}
 
             <FooterCoverPhoto />
+
+
 
             {/* <BottleAnimation /> */}
         </div>
