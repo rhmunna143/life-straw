@@ -74,13 +74,27 @@ const DraftBottleAnimation = () => {
 
     return (
         <Container>
-            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-[100px] pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem]`}>
+            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-[100px] pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem] z-[-10]`}>
 
                 <div className="flex lg:hidden mt-80 w-fit mx-auto">
                     <img src={gifBottle} alt="bottle git" />
                 </div>
 
-                <div className="left lg:mt-96">
+                <motion.div className="left lg:mt-96"
+                    initial={{
+                        opacity: 0,
+                        x: 350
+                    }}
+
+                    whileInView={{
+                        opacity: 1,
+                        x: 0
+                    }}
+
+                    transition={{
+                        duration: 2
+                    }}
+                >
                     <h2 className="lg:text-5xl text-3xl font-medium">UNSAFE TO SAFE WATER <br /> WITHIN 60 SECONDS</h2>
 
                     <p className="text-subTitle text-xl font-medium mt-5">Purify Any Water + Germ-Free Portable Water Filter</p>
@@ -90,7 +104,7 @@ const DraftBottleAnimation = () => {
                     <div className="mt-5">
                         <FreeOrderBtn />
                     </div>
-                </div>
+                </motion.div>
 
 
 
