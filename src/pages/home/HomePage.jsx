@@ -7,7 +7,7 @@ const HomePage = () => {
         <div>
             {/* <Banner /> */}
             <DraftBottleAnimation />
-            <BottleAnimation />
+            {/* <BottleAnimation /> */}
         </div>
     );
 };

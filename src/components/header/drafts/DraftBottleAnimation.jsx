@@ -3,9 +3,11 @@
 import bottle from "../../../assets/images/lifestraw1.png";
 import straightCork from "../../../assets/images/life-straw21.png";
 import corkOnly from "../../../assets/images/life-straw3.png";
+import gifBottle from "../../../assets/images/bottle.gif";
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from "react";
 import Container from "../../shared/Container";
+import FreeOrderBtn from "../../shared/FreeOrderBtn";
 
 const DraftBottleAnimation = () => {
     const [scrollDown, setScrollDown] = useState(false);
@@ -72,17 +74,29 @@ const DraftBottleAnimation = () => {
 
     return (
         <Container>
-            <div className={`bottle-container h-screen mb-[100px] pb-20 flex flex-col lg:flex-row justify-between items-center mt-[-10rem]`}>
+            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-[100px] pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem]`}>
 
-                <div className="left">
-                    left
+                <div className="flex lg:hidden mt-80 w-fit mx-auto">
+                    <img src={gifBottle} alt="bottle git" />
+                </div>
+
+                <div className="left lg:mt-96">
+                    <h2 className="lg:text-5xl text-3xl font-medium">UNSAFE TO SAFE WATER <br /> WITHIN 60 SECONDS</h2>
+
+                    <p className="text-subTitle text-xl font-medium mt-5">Purify Any Water + Germ-Free Portable Water Filter</p>
+
+                    <p className="mt-4 text-sm lg:text-base">Transform any source into pure refreshment, and keep your <br /> carriers germ-free.</p>
+
+                    <div className="mt-5">
+                        <FreeOrderBtn />
+                    </div>
                 </div>
 
 
 
                 {/* bottle animated */}
 
-                <motion.div className="bottle-2 absolute left-1/2 top-1/2 z-10"
+                <motion.div className="bottle-2 lg:absolute lg:left-[60%] lg:top-1/2 z-10 hidden lg:flex"
                     initial={{
                         rotate: 0
                     }}
@@ -106,7 +120,7 @@ const DraftBottleAnimation = () => {
 
                 {/* cork animated */}
 
-                <motion.div className="cork-2 absolute left-[53%] top-[41%] z-5"
+                <motion.div className="cork-2 lg:absolute left-[63%] lg:top-[41%] top-0 z-5 hidden lg:flex"
                     initial={{
                         rotate: 0,
                         x: 0
@@ -139,7 +153,7 @@ const DraftBottleAnimation = () => {
 
                 {/* cork only */}
 
-                <motion.div className="cork-2 absolute left-[53%] top-[41%] z-20"
+                <motion.div className="cork-2 absolute left-[63%] top-[41%] z-20 hidden lg:flex"
                     initial={{
                         opacity: 1
                     }}
@@ -158,7 +172,7 @@ const DraftBottleAnimation = () => {
                     <img src={corkOnly} alt="Cork" className="cork-img-2 w-[60%]" />
                 </motion.div>
 
-                <div className="right bg-primary text-white lg:relative lg:top-56 top-80 right-32 rounded-[33px] h-20 pt-40 pr-10 pl-28 z-[-5]">
+                <div className="right bg-primary text-white lg:relative lg:top-56  lg:right-0 rounded-[33px] h-20 pt-40 md:pr-10 md:pl-28 z-[-5] mx-auto lg:mx-0 px-5 md:px-0">
                     <div className="parent flex gap-4">
                         <div className="left">
                             Pure <br />

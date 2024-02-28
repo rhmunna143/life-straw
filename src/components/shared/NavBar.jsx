@@ -16,7 +16,7 @@ const NavBar = () => {
 
     return (
         <Container>
-            <div className="bg-bg flex flex-col md:flex-row flex-wrap justify-between items-center">
+            <div className="bg-bg flex flex-col lg:flex-row flex-wrap justify-between items-center">
                 <div className="logo">
                     <Link to="/">
                         <img className="h-24 w-40" src={logo} alt="logo" />
