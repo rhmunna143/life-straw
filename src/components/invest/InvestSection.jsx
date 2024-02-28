@@ -18,7 +18,7 @@ const InvestSection = () => {
             </div>
 
             <div className="right">
-                <h3 className="text-5xl font-thin uppercase leading-[120%]">Invest once, <span className="bg-primaryBg px-3 py-1 rounded-[33px]">enjoy</span> <br /> clean water for <span style={{ border: "1px solid black" }} className="px-3 py-0.5 rounded-[33px]">years</span></h3>
+                <h3 className="text-3xl md:text-5xl font-thin uppercase leading-[120%]">Invest once, <span className="bg-primaryBg px-3 py-1 rounded-[33px]">enjoy</span> <br /> clean water for <span style={{ border: "1px solid black" }} className="px-3 py-0.5 rounded-[33px]">years</span></h3>
             </div>
         </div>
     );

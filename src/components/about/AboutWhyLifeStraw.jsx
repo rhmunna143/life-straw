@@ -40,7 +40,7 @@ const AboutWhyLifeStraw = () => {
                     <img src={bottleImg} alt="bottle" className="w-52" />
                 </motion.div>
 
-                <div className="text text-xl space-y-6">
+                <div className="text text-xl space-y-6 px-2 md:px-0">
                     <div className="items-start flex gap-4">
                         <img src={icon} alt="icon" />
                         <p className="font-light tracking-[3.12px]">Traditional water purifier waste 3 times more water than Lifestraw.</p>

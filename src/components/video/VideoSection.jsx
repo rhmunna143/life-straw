@@ -20,8 +20,8 @@ const VideoSection = () => {
                 <p className="uppercase">Drink <br /> Directly <br /> from any <br /> source of <br /> Water</p>
             </div>
 
-            <div className="video">
-                <video autoPlay loop muted className="w-96 lg:w-[800px] md:h-full md:w-full rounded-[33px] md:rounded-[33px] " src={video} width={800}></video>
+            <div className="video w-fit mx-auto md:mx-0">
+                <video autoPlay loop muted className="w-80 lg:w-[800px] md:h-full md:w-full rounded-[33px] md:rounded-[33px] " src={video} width={800}></video>
             </div>
         </motion.div>
     );
