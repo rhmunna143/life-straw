@@ -94,5 +94,5 @@
 }
 
 .bottle-container.open-cork #cork-only {
-    animation: animateCorkOnly 0.01s forwards;
+    animation: animateCorkOnly 0.0001s forwards;
 }

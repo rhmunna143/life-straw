@@ -16,7 +16,7 @@ const BottleAnimation = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const triggerPoint = window.innerHeight * 0.8; // 80vh
+            const triggerPoint = window.innerHeight * 0.1; // 80vh
 
             if (scrollPosition > triggerPoint && !isOpen) {
                 setIsOpen(true);
