@@ -5,8 +5,8 @@ const HomePage = () => {
     return (
         <div>
             Home
-            <BottleAnimation />
             <DraftBottleAnimation />
+            <BottleAnimation />
         </div>
     );
 };

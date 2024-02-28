@@ -1,28 +1,26 @@
 // BottleAnimation.js
 
-import { useState, useEffect } from 'react';
 import bottle from "../../../assets/images/lifestraw1.png";
-import cork from "../../../assets/images/life-straw2.png";
 import straightCork from "../../../assets/images/life-straw21.png";
 import corkOnly from "../../../assets/images/life-straw3.png";
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useState } from "react";
 
 const DraftBottleAnimation = () => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleContainerClick = () => {
-        setIsOpen(!isOpen);
-    };
+    const [scrollDown, setScrollDown] = useState(false);
+    const controls = useAnimation();
+    const bottleControls = useAnimation();
+    const onlyCorkControls = useAnimation();
 
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const triggerPoint = window.innerHeight * 0.1; // 80vh
+            const triggerPoint = window.innerHeight * 0.4; // 50vh
 
-            if (scrollPosition > triggerPoint && !isOpen) {
-                setIsOpen(true);
-            } else if (scrollPosition <= triggerPoint && isOpen) {
-                setIsOpen(false);
+            if (scrollPosition > triggerPoint && !scrollDown) {
+                setScrollDown(true);
+            } else if (scrollPosition <= triggerPoint && scrollDown) {
+                setScrollDown(false);
             }
         };
 
@@ -31,13 +29,49 @@ const DraftBottleAnimation = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [isOpen]);
+    }, [scrollDown]);
+
+    useEffect(() => {
+        if (scrollDown) {
+            // If scrolled down, reverse the animation
+            controls.start({
+                rotate: 0,
+                x: 0,
+                y: 0,
+            });
+
+            bottleControls.start({
+                rotate: 0
+            })
+
+            onlyCorkControls.start({
+                opacity: 1,
+                transition: { delay: 1.7 , duration: 0}
+            })
+
+        } else {
+            // If not scrolled down, play the forward animation
+            controls.start({
+                rotate: -19,
+                x: -50,
+                y: -100,
+                opacity: 1
+            });
+
+            bottleControls.start({
+                rotate: -19
+            })
+
+            onlyCorkControls.start({
+                opacity: 0,
+                // transition: {delay: 2}
+            })
+        }
+    }, [controls, scrollDown, bottleControls, onlyCorkControls]);
 
     return (
-        <div
-            className={`bottle-container h-screen ${isOpen ? 'open-cork' : ''} mt-15 mb-[100px] pb-20`}
-            onClick={handleContainerClick}
-        >
+        <div className={`bottle-container h-screen mb-[100px] pb-20`}>
+
 
 
 
@@ -51,6 +85,8 @@ const DraftBottleAnimation = () => {
                 whileInView={{
                     rotate: -19
                 }}
+
+                animate={bottleControls}
 
                 transition={{
                     duration: 2
@@ -77,6 +113,14 @@ const DraftBottleAnimation = () => {
                     y: -100
                 }}
 
+                animate={controls}
+
+                onViewportLeave={{
+                    rotate: 0,
+                    x: 0,
+                    y: 0
+                }}
+
                 transition={{
                     duration: 2
                 }}
@@ -87,9 +131,10 @@ const DraftBottleAnimation = () => {
 
 
 
+
             {/* cork only */}
 
-            <motion.div className="cork-2 absolute left-[53%] top-[41%]"
+            <motion.div className="cork-2 absolute left-[53%] top-[41%] z-20"
                 initial={{
                     opacity: 1
                 }}
@@ -98,6 +143,8 @@ const DraftBottleAnimation = () => {
                     opacity: 0
                 }}
 
+                animate={onlyCorkControls}
+
                 transition={{
                     duration: 0.0001
                 }}
@@ -105,8 +152,7 @@ const DraftBottleAnimation = () => {
                 {/*cork image */}
                 <img src={corkOnly} alt="Cork" className="cork-img-2 w-[60%]" />
             </motion.div>
-
-        </div >
+        </div>
     );
 };
 
