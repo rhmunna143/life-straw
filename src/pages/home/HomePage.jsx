@@ -1,12 +1,19 @@
-import Banner from "../../components/header/Banner";
-import BottleAnimation from "../../components/header/BottleAnimation";
+// import BottleAnimation from "../../components/header/BottleAnimation";
+import AboutWhyLifeStraw from "../../components/about/AboutWhyLifeStraw";
 import DraftBottleAnimation from "../../components/header/drafts/DraftBottleAnimation";
 
 const HomePage = () => {
     return (
         <div>
-            {/* <Banner /> */}
+
+            {/* Animated banner section */}
+
             <DraftBottleAnimation />
+
+            {/* second about banner section */}
+
+            <AboutWhyLifeStraw />
+
             {/* <BottleAnimation /> */}
         </div>
     );
