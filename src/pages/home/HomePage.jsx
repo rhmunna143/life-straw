@@ -1,5 +1,6 @@
 // import BottleAnimation from "../../components/header/BottleAnimation";
 import AboutWhyLifeStraw from "../../components/about/AboutWhyLifeStraw";
+import FooterCoverPhoto from "../../components/cover/FooterCoverPhoto";
 import DraftBottleAnimation from "../../components/header/drafts/DraftBottleAnimation";
 import InvestSection from "../../components/invest/InvestSection";
 import VideoSection from "../../components/video/VideoSection";
@@ -20,7 +21,6 @@ const HomePage = () => {
 
 
 
-
             {/* video section */}
 
             <VideoSection />
@@ -33,7 +33,22 @@ const HomePage = () => {
 
 
 
-            
+            {/* slider 1 */}
+
+
+
+
+
+
+            {/* slider 2 */}
+
+
+
+
+
+            {/* footer cover photo */}
+
+            <FooterCoverPhoto />
 
             {/* <BottleAnimation /> */}
         </div>
