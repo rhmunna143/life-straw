@@ -1,19 +1,44 @@
 import childImg from "../../assets/images/child-with-water-glass 1.png";
 import bottleImg from "../../assets/images/bottle.png";
 import icon from "../../assets/icons/Layer_1.svg";
+import { motion } from "framer-motion";
 
 const AboutWhyLifeStraw = () => {
     return (
-        <div className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0">
+        <motion.div className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0"
+            initial={{
+                y: 300
+            }}
+
+            whileInView={{
+                y: 0
+            }}
+
+            transition={{
+                duration: 1.5
+            }}
+        >
             <div className="mx-auto w-fit lg:mx-0">
                 <h2 className="pl-14 text-3xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
                 <img src={childImg} alt="child img" className="mt-5 w-11/12 lg:w-auto ml-3 lg:ml-0" />
             </div>
 
             <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center">
-                <div className="bottle-img">
+                <motion.div className="bottle-img"
+                    initial={{
+                        y: -600
+                    }}
+
+                    whileInView={{
+                        y: 0
+                    }}
+
+                    transition={{
+                        duration: 2
+                    }}
+                >
                     <img src={bottleImg} alt="bottle" className="w-52" />
-                </div>
+                </motion.div>
 
                 <div className="text text-xl space-y-6">
                     <div className="items-start flex gap-4">
@@ -32,7 +57,7 @@ const AboutWhyLifeStraw = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
