@@ -1,0 +1,98 @@
+/* BottleAnimation.css */
+
+.bottle-container {
+    position: relative;
+    height: 100vh;
+    /* padding: 300px 0; */
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 30;
+    top: 0;
+}
+
+.bottle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease;
+    z-index: 50;
+}
+
+#bottle-2 {
+    z-index: 150;
+}
+
+.cork {
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-44%) rotate(20deg);
+    transition: transform 0.5s ease;
+    z-index: 100;
+}
+
+#cork-only{
+    transform: translateX(-50%) rotate(0deg);
+    left: 50%;
+    top: 10%;
+    z-index: 160;
+}
+
+.bottle-img,
+.cork-img {
+    display: block;
+    max-width: 70%;
+}
+
+
+/* Animation */
+
+@keyframes openCork {
+    from {
+        transform: rotate(-20deg) translateX(10px);
+    }
+
+    to {
+        transform: rotate(-6deg) translateY(-5px) translateX(-40%);
+    }
+}
+
+@keyframes animateBottle {
+    from {
+        transform: rotate(-19deg) translateX(50%);
+
+    }
+
+    to {
+        transform: rotate(-25deg) translateX(-10%) translateY(-5px);
+
+    }
+}
+
+/* cork only */
+
+@keyframes animateCorkOnly {
+    from {
+        opacity: 1;
+
+    }
+
+    to {
+       opacity: 0;
+    }
+}
+
+/* Apply animation on click */
+
+.bottle-container.open-cork .bottle {
+    animation: animateBottle 2.5s forwards;
+}
+
+.bottle-container.open-cork .cork {
+    animation: openCork 2.5s forwards;
+}
+
+.bottle-container.open-cork #cork-only {
+    animation: animateCorkOnly 0.01s forwards;
+}
