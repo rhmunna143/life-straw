@@ -4,6 +4,7 @@ import FooterCoverPhoto from "../../components/cover/FooterCoverPhoto";
 import DraftBottleAnimation from "../../components/header/drafts/DraftBottleAnimation";
 import InvestSection from "../../components/invest/InvestSection";
 import VideoSection from "../../components/video/VideoSection";
+import Slider from "./SliderProducts";
 
 const HomePage = () => {
     return (
@@ -31,7 +32,7 @@ const HomePage = () => {
 
             {/* slider 1 */}
 
-
+            <Slider />
 
 
             {/* slider 2 */}
