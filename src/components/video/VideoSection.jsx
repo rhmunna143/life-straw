@@ -3,7 +3,7 @@ import video from "../../assets/video/no-sound.mp4";
 
 const VideoSection = () => {
     return (
-        <motion.div className="px-4 flex flex-col md:flex-row gap-8 mt-7 mb-20"
+        <motion.div className="px-4 flex flex-col md:flex-row gap-8 mt-24 mb-20"
             initial={{
                 y: -5
             }}

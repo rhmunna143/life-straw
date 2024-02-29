@@ -87,7 +87,7 @@ const LeftSlider = () => {
             {images.map((image, index) => (
                 <motion.div
                     key={index}
-                    className="absolute top-[8rem]"
+                    className="absolute top-[7rem]"
                     initial={{
                         x: -300,
                         opacity: 1,
@@ -110,6 +110,44 @@ const LeftSlider = () => {
     );
 };
 
+// middle side slider
+
+const MiddleSlider = () => {
+    const animationDuration = 4;
+
+    return (
+        <div>
+            {sliderData.map((item, index) => (
+                <motion.div
+                    key={index}
+                    className="absolute top-[7rem]"
+                    initial={{
+                        y: 100,
+                        opacity: 1,
+                    }}
+                    animate={{
+                        y: [100, 0, 0, 100],
+                        opacity: [0, 1, 1, 0],
+                    }}
+                    transition={{
+                        duration: animationDuration,
+                        delay: index * animationDuration,
+                        repeat: Infinity,
+                        repeatDelay: animationDuration * (sliderData.length - 1),
+                    }}
+                >
+                    <div className="ml-[-13rem] mt-[-8rem]">
+                        <h4 className="font-semibold">{item.title}</h4>
+                        <h2 className="text-2xl text-subTitle mt-2">{item.subTitle}</h2>
+                        <p className="mt-5">{item.description}</p>
+                    </div>
+                    <img src={item.rightImg} alt={`slider-${index}`} className="w-auto mt-5 rounded-[33px]" />
+                </motion.div>
+            ))}
+        </div>
+    );
+};
+
 const SliderProducts = () => {
     return (
         <div className="flex justify-between">
@@ -123,9 +161,13 @@ const SliderProducts = () => {
                 <img className="absolute z-[-10] top-0 w-[250px] my-auto" src={ellipse} alt="ellipse shape" />
             </div>
 
-            <div className="right">
+            <div className="right middle">
 
                 <div className="absolute">
+                    <MiddleSlider />
+                </div>
+
+                <div className="relative left-[-160%] top-[20%]">
                     <FreeOrderBtn />
                 </div>
             </div>
