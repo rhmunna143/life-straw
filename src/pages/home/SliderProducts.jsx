@@ -19,7 +19,48 @@ import rightImg3 from "../../assets/icons/slider1/pink bottle model.png";
 import rightImg4 from "../../assets/icons/slider1/boy 1.png";
 import FreeOrderBtn from "../../components/shared/FreeOrderBtn";
 import { motion } from "framer-motion";
+import Marquee from "react-fast-marquee";
 
+// bottles gallery 1
+
+import bottle1 from "../../assets/icons/slider1/bottles/pink-bottle 1.png";
+import bottle2 from "../../assets/icons/slider1/bottles/sky-blue-bottle.png";
+import bottle3 from "../../assets/icons/slider1/bottles/white-bottle.png";
+
+// bottles gallery 2
+
+import bottle4 from "../../assets/icons/slider1/bottles/sayan-blue.png";
+import bottle5 from "../../assets/icons/slider1/bottles/orange-bottle.png";
+import bottle6 from "../../assets/icons/slider1/bottles/navy-blue-bottle.png";
+
+// bottles gallery 3
+
+import bottle7 from "../../assets/icons/slider1/bottles/pink-bottle 1.png";
+import bottle8 from "../../assets/icons/slider1/bottles/sky-blue-bottle.png";
+import bottle9 from "../../assets/icons/slider1/bottles/white-bottle.png";
+
+// marquee variables
+
+const mark1 = [bottle1, bottle2, bottle3];
+const mark2 = [bottle4, bottle5, bottle6];
+const mark3 = [bottle7, bottle8, bottle9];
+
+let animationDuration = 3;
+
+import React from 'react';
+
+const BottleMarquee = ({ bottles }) => {
+    return (
+        <div className="flex flex-col gap-4 w-fit mx-auto">
+            {
+                bottles.map((item, index) => <img key={index} src={item} className="w-40" />)
+            }
+        </div>
+    );
+};
+
+
+// slider data here
 
 const sliderData = [
     {
@@ -87,7 +128,7 @@ const LeftSlider = () => {
             {images.map((image, index) => (
                 <motion.div
                     key={index}
-                    className="absolute top-[7rem]"
+                    className="absolute top-[7rem] left-[-14rem] md:left-0"
                     initial={{
                         x: -300,
                         opacity: 1,
@@ -120,15 +161,19 @@ const MiddleSlider = () => {
             {sliderData.map((item, index) => (
                 <motion.div
                     key={index}
-                    className="absolute md:top-[7rem] top-[18rem] md:ml-[3rem] px-4 md:px-0"
+
+                    className="absolute md:ml-[3rem] left-[-7rem] md:left-16 top-[22rem] md:top-0 px-4 md:px-0"
+
                     initial={{
                         y: 100,
                         opacity: 1,
                     }}
+
                     animate={{
                         y: [100, 0, 0, 100],
                         opacity: [0, 1, 1, 0],
                     }}
+
                     transition={{
                         duration: animationDuration,
                         delay: index * animationDuration,
@@ -136,10 +181,10 @@ const MiddleSlider = () => {
                         repeatDelay: animationDuration * (sliderData.length - 1),
                     }}
                 >
-                    <div className="lg:ml-[-13rem] mt-[-8rem]">
+                    <div className="lg:ml-[-16rem] mt-[-10rem]">
                         <h4 className="font-semibold">{item.title}</h4>
                         <h2 className="text-2xl text-subTitle mt-2">{item.subTitle}</h2>
-                        <p className="mt-5">{item.description}</p>
+                        <p className="mt-5 text-primary">{item.description}</p>
                     </div>
                     <img src={item.rightImg} alt={`slider-${index}`} className="w-auto mt-5 rounded-[33px]" />
                 </motion.div>
@@ -150,7 +195,7 @@ const MiddleSlider = () => {
 
 const SliderProducts = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col md:flex-row flex-wrap justify-between items-center">
             <div className="left relative h-screen">
 
 
@@ -158,7 +203,7 @@ const SliderProducts = () => {
 
                 <LeftSlider />
 
-                <img className="absolute z-[-10] top-0 w-[250px] my-auto" src={ellipse} alt="ellipse shape" />
+                <img className="absolute left-[-14rem] md:left-0 z-[-10] top-0 w-[250px] my-auto" src={ellipse} alt="ellipse shape" />
             </div>
 
             <div className="right middle">
@@ -167,13 +212,22 @@ const SliderProducts = () => {
                     <MiddleSlider />
                 </div>
 
-                <div className="relative lg:left-[-160%] md:left-[-70%] md:top-0 top-20 px-4 md:px-0 lg:top-[20%]">
+                <div className="relative lg:left-[-110%] md:left-[-70%] md:top-[-10rem] top-20 px-4 md:px-0 lg:top-[20%]">
                     <FreeOrderBtn />
                 </div>
             </div>
 
-            <div className="right-marquee">
+            <div className="right-marquee bg-white relative">
+                <h6 className="text-right text-xl tracking-[4px] relative right-12 mb-4">OUR FEATURED GO <br /> SERIES</h6>
+                <div className="h-60 bg-white left-[-8rem]">
 
+                    <marquee direction="up" height="100%">
+                        <BottleMarquee bottles={mark1} />
+                        <BottleMarquee bottles={mark2} />
+                        <BottleMarquee bottles={mark3} />
+                    </marquee>
+
+                </div>
             </div>
         </div>
     );
