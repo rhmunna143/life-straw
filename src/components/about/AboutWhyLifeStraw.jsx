@@ -19,8 +19,8 @@ const AboutWhyLifeStraw = () => {
             }}
         >
             <div className="mx-auto w-fit lg:mx-0">
-                <h2 className="pl-14 text-3xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
-                <img src={childImg} alt="child img" className="mt-5 w-11/12 lg:w-auto ml-3 lg:ml-0" />
+                <h2 className="pl-14 text-2xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
+                <img src={childImg} alt="child img" className="mt-5 w-4/5 lg:w-auto ml-3 lg:ml-0" />
             </div>
 
             <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center">
