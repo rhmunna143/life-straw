@@ -120,7 +120,7 @@ const MiddleSlider = () => {
             {sliderData.map((item, index) => (
                 <motion.div
                     key={index}
-                    className="absolute top-[7rem]"
+                    className="absolute md:top-[7rem] top-[18rem] md:ml-[3rem] px-4 md:px-0"
                     initial={{
                         y: 100,
                         opacity: 1,
@@ -136,7 +136,7 @@ const MiddleSlider = () => {
                         repeatDelay: animationDuration * (sliderData.length - 1),
                     }}
                 >
-                    <div className="ml-[-13rem] mt-[-8rem]">
+                    <div className="lg:ml-[-13rem] mt-[-8rem]">
                         <h4 className="font-semibold">{item.title}</h4>
                         <h2 className="text-2xl text-subTitle mt-2">{item.subTitle}</h2>
                         <p className="mt-5">{item.description}</p>
@@ -150,7 +150,7 @@ const MiddleSlider = () => {
 
 const SliderProducts = () => {
     return (
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row justify-between">
             <div className="left relative h-screen">
 
 
@@ -167,7 +167,7 @@ const SliderProducts = () => {
                     <MiddleSlider />
                 </div>
 
-                <div className="relative left-[-160%] top-[20%]">
+                <div className="relative lg:left-[-160%] md:left-[-70%] md:top-0 top-20 px-4 md:px-0 lg:top-[20%]">
                     <FreeOrderBtn />
                 </div>
             </div>
