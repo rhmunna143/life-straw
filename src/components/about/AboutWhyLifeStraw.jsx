@@ -1,5 +1,8 @@
 import childImg from "../../assets/images/child-with-water-glass 1.png";
 import bottleImg from "../../assets/images/bottle.png";
+import bottle from "../../assets/images/lifestraw1.png";
+import cork from "../../assets/images/life-straw21.png";
+import onlyCork from "../../assets/images/life-straw3.png";
 import icon from "../../assets/icons/Layer_1.svg";
 import { motion } from "framer-motion";
 
@@ -23,24 +26,70 @@ const AboutWhyLifeStraw = () => {
                 <img src={childImg} alt="child img" className="mt-5 w-4/5 lg:w-auto ml-3 lg:ml-0" />
             </div>
 
-            <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center">
-                <motion.div className="bottle-img"
-                    initial={{
-                        y: -600
-                    }}
+            <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center justify-between">
 
-                    whileInView={{
-                        y: 0
-                    }}
 
-                    transition={{
-                        duration: 2
-                    }}
-                >
-                    <img src={bottleImg} alt="bottle" className="w-52" />
-                </motion.div>
+                <div className="relative">
+                    {/* animated bottle */}
 
-                <div className="text text-xl space-y-6 px-2 md:px-0">
+                    <motion.div className="bottle-img absolute top-[-11rem] z-10"
+                        initial={{
+                            y: -300
+                        }}
+
+                        whileInView={{
+                            y: 0
+                        }}
+
+                        transition={{
+                            duration: 2
+                        }}
+                    >
+                        <img src={bottle} alt="bottle" className="w-44" />
+                    </motion.div>
+
+
+                    {/* animated cork */}
+
+                    <motion.div className="cork-img absolute top-[-15rem] left-9 z-0"
+                        initial={{
+                            y: -400
+                        }}
+
+                        whileInView={{
+                            y: 0
+                        }}
+
+                        transition={{
+                            duration: 2
+                        }}
+                    >
+                        <img src={cork} alt="cork" className="w-32  right-5" />
+                    </motion.div>
+
+                    {/* animated cork only */}
+
+                    <motion.div className="cork-img-4 absolute top-[-15rem] left-9 z-20"
+                        initial={{
+                            opacity: 0,
+                            y: -400,
+                        }}
+
+                        whileInView={{
+                            opacity: 1,
+                            y: 0
+                        }}
+
+                        transition={{
+                            duration: 0,
+                            delay: 1.7
+                        }}
+                    >
+                        <img src={onlyCork} alt="cork" className="w-32  right-5" />
+                    </motion.div>
+                </div>
+
+                <div className="text text-lg space-y-6 px-2 md:px-0 w-[470px] relative">
                     <div className="items-start flex gap-4">
                         <img src={icon} alt="icon" />
                         <p className="font-light tracking-[3.12px]">Traditional water purifier waste 3 times more water than Lifestraw.</p>
