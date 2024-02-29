@@ -1,5 +1,4 @@
 import childImg from "../../assets/images/child-with-water-glass 1.png";
-import bottleImg from "../../assets/images/bottle.png";
 import bottle from "../../assets/images/lifestraw1.png";
 import cork from "../../assets/images/life-straw21.png";
 import onlyCork from "../../assets/images/life-straw3.png";
@@ -21,15 +20,15 @@ const AboutWhyLifeStraw = () => {
                 duration: 1.5
             }}
         >
-            <div className="mx-auto w-fit lg:mx-0">
-                <h2 className="pl-14 text-2xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
+            <div className="mx-auto md:w-fit lg:mx-0 mt-[-25rem] lg:mt-0">
+                <h2 className="pl-14 w-80 md:w-auto text-xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
                 <img src={childImg} alt="child img" className="mt-5 w-4/5 lg:w-auto ml-3 lg:ml-0" />
             </div>
 
             <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center justify-between">
 
 
-                <div className="relative">
+                <div className="relative hidden md:flex">
                     {/* animated bottle */}
 
                     <motion.div className="bottle-img absolute top-[-11rem] z-10"
@@ -72,7 +71,7 @@ const AboutWhyLifeStraw = () => {
                     <motion.div className="cork-img-4 absolute top-[-15rem] left-9 z-20"
                         initial={{
                             opacity: 0,
-                            y: -400,
+                            y: 0,
                         }}
 
                         whileInView={{
@@ -82,14 +81,14 @@ const AboutWhyLifeStraw = () => {
 
                         transition={{
                             duration: 0,
-                            delay: 1.7
+                            delay: 2
                         }}
                     >
                         <img src={onlyCork} alt="cork" className="w-32  right-5" />
                     </motion.div>
                 </div>
 
-                <div className="text text-lg space-y-6 px-2 md:px-0 w-[470px] relative">
+                <div className="text text-lg space-y-6 px-2 md:px-0 w-80 md:w-[470px] relative md:pt-28">
                     <div className="items-start flex gap-4">
                         <img src={icon} alt="icon" />
                         <p className="font-light tracking-[3.12px]">Traditional water purifier waste 3 times more water than Lifestraw.</p>

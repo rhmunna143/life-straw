@@ -3,7 +3,7 @@
 import bottle from "../../../assets/images/lifestraw1.png";
 import straightCork from "../../../assets/images/life-straw21.png";
 import corkOnly from "../../../assets/images/life-straw3.png";
-import gifBottle from "../../../assets/images/bottle.gif";
+import gifBottle from "../../../assets/images/bottle.png";
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from "react";
 import Container from "../../shared/Container";
@@ -80,40 +80,42 @@ const DraftBottleAnimation = () => {
 
                 {/* bottle hidden in large device */}
 
-                <div className="flex lg:hidden mt-80 w-fit mx-auto">
-                    <img src={gifBottle} alt="bottle git" />
-                </div>
+                <div className="flex lg:hidden mt-96 w-fit mx-auto relative">
+                    <img src={gifBottle} alt="bottle gif" className="w-52" />
 
-                {/* bottle bg hidden in large device */}
+                    {/* bottle bg hidden in large device */}
 
-                <div className="right flex lg:hidden bg-primary text-white lg:relative lg:top-56  lg:right-0 rounded-[33px] h-20 pt-40 md:pr-10 md:pl-28 z-[-5] mx-auto lg:mx-0 px-5 md:px-0">
-                    <div className="parent flex gap-4">
-                        <div className="left">
-                            Pure <br />
-                            Water
-                        </div>
+                    <div className="right flex lg:hidden bg-primary text-white rounded-[33px] h-20 pt-40 md:pr-10 md:pl-28 z-[-5] mx-auto lg:mx-0 px-5 md:px-0 absolute top-[65%] left-[-4rem]">
+                        <div className="parent flex gap-4">
+                            <div className="left">
+                                Pure <br />
+                                Water
+                            </div>
 
-                        <div className="middle">
-                            <svg width="156" height="2" viewBox="0 0 156 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 1L156 0.999986" stroke="white" strokeWidth="1.5" />
-                            </svg>
+                            <div className="middle">
+                                <svg width="156" height="2" viewBox="0 0 156 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 1L156 0.999986" stroke="white" strokeWidth="1.5" />
+                                </svg>
 
-                        </div>
+                            </div>
 
-                        <div className="right">
-                            Pure <br />
-                            Impact
+                            <div className="right">
+                                Pure <br />
+                                Impact
+                            </div>
                         </div>
                     </div>
                 </div>
 
 
+
+
                 {/* banner animated text */}
 
-                <motion.div className="left lg:mt-96"
+                <motion.div className="left lg:mt-96 mt-20 px-4 md:px-0 w-72 md:w-auto md:mx-0"
                     initial={{
                         opacity: 0,
-                        x: 350
+                        x: 250
                     }}
 
                     whileInView={{
@@ -125,11 +127,11 @@ const DraftBottleAnimation = () => {
                         duration: 2
                     }}
                 >
-                    <h2 className="lg:text-5xl text-2xl font-medium">UNSAFE TO SAFE WATER <br /> WITHIN 60 SECONDS</h2>
+                    <h2 className="lg:text-5xl md:text-2xl text-xl font-medium">UNSAFE TO SAFE WATER <br /> WITHIN 60 SECONDS</h2>
 
                     <p className="text-subTitle text-lg md:text-xl font-medium mt-5">Purify Any Water + Germ-Free Portable Water Filter</p>
 
-                    <p className="mt-4 text-sm w-96 md:w-auto lg:text-base">Transform any source into pure refreshment, and keep your <br /> carriers germ-free.</p>
+                    <p className="mt-4 text-sm w-80 md:w-auto lg:text-base">Transform any source into pure refreshment, and keep your <br /> carriers germ-free.</p>
 
                     <div className="mt-5">
                         <FreeOrderBtn />
