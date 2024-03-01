@@ -90,24 +90,27 @@ const BottleSliderSection = () => {
     const animationDuration = 4;
 
     return (
-        <div className="mt-[50rem] md:mt-[30rem] lg:mt-0 h-screen">
+        <div className="mt-[50rem] md:mt-[30rem] lg:mt-8 mb-28 h-screen">
 
             {/* left side slider */}
             <div className="left left-bg h-screen relative z-50 flex flex-col justify-center">
                 {sliderData.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="absolute left-[-14rem] md:left-0"
+                        className="absolute md:left-0"
+
                         initial={{
                             x: index == 0 ? -300 : 0,
-                            y: index == 0 ? 0 : 100,
-                            opacity: 1,
+                            y: index == 0 ? 0 : 200,
+                            opacity: index == 0 ? 1 : 0,
                         }}
+
                         animate={{
                             x: index == 0 ? [-300, 0, 0, -300] : 0,
-                            y: index == 0 ? 0 : [-100, 0, 0, -100],
-                            opacity: [1, 1, 1, 0],
+                            y: index == 0 ? 0 : [200, 0, 0, 200],
+                            opacity: index == 0 ? [1, 1, 1, 0] : [0, 1, 1, 0],
                         }}
+
                         transition={{
                             duration: animationDuration,
                             delay: index * animationDuration,
@@ -116,14 +119,16 @@ const BottleSliderSection = () => {
                         }}
                     >
                         {
-                            item.leftImg && <img src={item?.leftImg} alt={`slider-${index + 1}`} className="w-4/5" />
+                            item.leftImg && <img src={item?.leftImg} alt={`slider-${index + 1}`} className="lg:w-4/5 w-4/5 md:w-1/2" />
                         }
 
                         {
                             item.title &&
 
-                            <div className="text-white">
-                                {index + 1}
+                            <div className="text-white relative left-[4rem] px-4 md:px-0">
+                                <h2 className="text-4xl font-bold w-72">{item.title}</h2>
+                                <h3 className="mt-12 mb-8 w-80 text-3xl font-normal">{item.subTitle}</h3>
+                                <p className="w-96">{item.description}</p>
                             </div>
                         }
                     </motion.div>
