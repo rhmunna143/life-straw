@@ -1,0 +1,4 @@
+.left-bg {
+    background: linear-gradient(90deg, #3F5260 0%, #3F5260 47.24%, rgba(63, 82, 96, 0.00) 77.44%);
+    background-blend-mode: overlay;
+}

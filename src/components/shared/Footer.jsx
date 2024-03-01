@@ -27,7 +27,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </Container>
-                <footer className="bg-footerBg pb-10 pt-32 w-full relative">
+                
+                <footer className="bg-footerBg pb-10 pt-32 md:w-full relative">
                     <Container>
                         <div className="footer-container flex flex-col lg:flex-row justify-between gap-4 md:gap-10 lg:gap-40 mx-auto w-fit">
                             <div className="logo menu">
