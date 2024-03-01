@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png';
 import Container from './Container';
-import Search from '../search/Search';
 import cartIcon from '../../assets/icons/ic_outline-shopping-bag.svg';
+import Search from '../home/search/Search';
 
 const NavBar = () => {
     const [menuOpen, setMenuOpen] = useState(false);

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import video from "../../assets/video/no-sound.mp4";
+import video from "../../../assets/video/no-sound.mp4";
 
 const VideoSection = () => {
     return (

@@ -197,12 +197,13 @@ const MiddleSlider = () => {
 const SliderProducts = () => {
     return (
         <>
-            <div>
+            <div className="">
                 <Container>
                     <h2 className="text-2xl tracking-[7px] font-normal">PRODUCTS</h2>
                     <hr className="text-primary mb-10 mt-5" />
                 </Container>
             </div>
+
             <div className="flex flex-col md:flex-row flex-wrap justify-between items-center">
                 <div className="left relative h-screen">
 

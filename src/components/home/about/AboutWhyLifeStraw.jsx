@@ -1,8 +1,8 @@
-import childImg from "../../assets/images/child-with-water-glass 1.png";
-import bottle from "../../assets/images/lifestraw1.png";
-import cork from "../../assets/images/life-straw21.png";
-import onlyCork from "../../assets/images/life-straw3.png";
-import icon from "../../assets/icons/Layer_1.svg";
+import childImg from "../../../assets/images/child-with-water-glass 1.png";
+import bottle from "../../../assets/images/lifestraw1.png";
+import cork from "../../../assets/images/life-straw21.png";
+import onlyCork from "../../../assets/images/life-straw3.png";
+import icon from "../../../assets/icons/Layer_1.svg";
 import { motion } from "framer-motion";
 
 const AboutWhyLifeStraw = () => {

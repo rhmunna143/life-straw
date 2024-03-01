@@ -1,5 +1,5 @@
-import logo1 from "../../assets/icons/Layer_2.svg";
-import logo2 from "../../assets/icons/Layer_3.svg";
+import logo1 from "../../../assets/icons/Layer_2.svg";
+import logo2 from "../../../assets/icons/Layer_3.svg";
 
 const InvestSection = () => {
     return (

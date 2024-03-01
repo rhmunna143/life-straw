@@ -1,6 +1,6 @@
 // Search.js
 
-import searchIcon from "../../assets/icons/material-symbols_search.svg";
+import searchIcon from "../../../assets/icons/material-symbols_search.svg";
 import { useState } from 'react';
 
 const Search = () => {
