@@ -76,7 +76,7 @@ const DraftBottleAnimation = () => {
 
     return (
         <Container>
-            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-20 pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem] z-[-10]`}>
+            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-20 pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem] z-[-10] w-96 md:w-auto`}>
 
                 {/* bottle hidden in large device */}
 

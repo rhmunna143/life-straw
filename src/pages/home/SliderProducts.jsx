@@ -48,6 +48,7 @@ const mark3 = [bottle7, bottle8, bottle9];
 let animationDuration = 3;
 
 import React from 'react';
+import Container from "../../components/shared/Container";
 
 const BottleMarquee = ({ bottles }) => {
     return (
@@ -162,7 +163,7 @@ const MiddleSlider = () => {
                 <motion.div
                     key={index}
 
-                    className="absolute md:ml-[3rem] left-[-7rem] md:left-16 top-[22rem] md:top-0 px-4 md:px-0"
+                    className="absolute md:ml-[3rem] left-[-7rem] md:left-16 top-[22rem] md:top-0 md:px-0 w-96 md:w-auto"
 
                     initial={{
                         y: 100,
@@ -195,41 +196,49 @@ const MiddleSlider = () => {
 
 const SliderProducts = () => {
     return (
-        <div className="flex flex-col md:flex-row flex-wrap justify-between items-center">
-            <div className="left relative h-screen">
-
-
-                {/* left side sliders */}
-
-                <LeftSlider />
-
-                <img className="absolute left-[-14rem] md:left-0 z-[-10] top-0 w-[250px] my-auto" src={ellipse} alt="ellipse shape" />
+        <>
+            <div>
+                <Container>
+                    <h2 className="text-2xl tracking-[7px] font-normal">PRODUCTS</h2>
+                    <hr className="text-primary mb-10 mt-5" />
+                </Container>
             </div>
+            <div className="flex flex-col md:flex-row flex-wrap justify-between items-center">
+                <div className="left relative h-screen">
 
-            <div className="right middle">
 
-                <div className="absolute">
-                    <MiddleSlider />
+                    {/* left side sliders */}
+
+                    <LeftSlider />
+
+                    <img className="absolute left-[-14rem] md:left-0 z-[-10] top-0 w-[250px] my-auto" src={ellipse} alt="ellipse shape" />
                 </div>
 
-                <div className="relative lg:left-[-110%] md:left-[-70%] md:top-[-10rem] top-20 px-4 md:px-0 lg:top-[20%]">
-                    <FreeOrderBtn />
+                <div className="right middle">
+
+                    <div className="absolute">
+                        <MiddleSlider />
+                    </div>
+
+                    <div className="relative lg:left-[-110%] md:left-[-70%] md:top-[-10rem] top-20 px-4 md:px-0 lg:top-[20%]">
+                        <FreeOrderBtn />
+                    </div>
+                </div>
+
+                <div className="right-marquee bg-white relative top-[40rem] md:top-[30rem] lg:top-0 lg:left-0 left-[1rem] md:left-[-15rem]">
+                    <h6 className="text-right text-xl tracking-[4px] relative right-12 mb-4 font-normal">OUR FEATURED GO <br /> SERIES</h6>
+                    <div className="h-60 bg-white left-[-8rem]">
+
+                        <marquee direction="up" height="100%">
+                            <BottleMarquee bottles={mark1} />
+                            <BottleMarquee bottles={mark2} />
+                            <BottleMarquee bottles={mark3} />
+                        </marquee>
+
+                    </div>
                 </div>
             </div>
-
-            <div className="right-marquee bg-white relative top-[40rem] md:top-[30rem] lg:top-0 lg:left-0 left-[1rem] md:left-[-15rem]">
-                <h6 className="text-right text-xl tracking-[4px] relative right-12 mb-4">OUR FEATURED GO <br /> SERIES</h6>
-                <div className="h-60 bg-white left-[-8rem]">
-
-                    <marquee direction="up" height="100%">
-                        <BottleMarquee bottles={mark1} />
-                        <BottleMarquee bottles={mark2} />
-                        <BottleMarquee bottles={mark3} />
-                    </marquee>
-
-                </div>
-            </div>
-        </div>
+        </>
     );
 };
 
@@ -241,6 +250,9 @@ export default SliderProducts;
 
 
 
+
+
+// Drafts
 
 {/* <motion.div className="absolute top-[8rem]"
                     initial={{
