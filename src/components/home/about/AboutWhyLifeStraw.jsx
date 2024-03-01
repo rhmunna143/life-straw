@@ -20,7 +20,7 @@ const AboutWhyLifeStraw = () => {
                 duration: 1.5
             }}
         >
-            <div className="mx-auto md:w-fit lg:mx-0 mt-[-25rem] lg:mt-0">
+            <div className="mx-auto md:ml-0 md:w-fit lg:mx-0 mt-[-25rem] lg:mt-0">
                 <h2 className="pl-14 w-80 md:w-auto text-xl md:text-6xl font-normal tracking-[20px]">WHY <br /> LIFESTRAW</h2>
                 <img src={childImg} alt="child img" className="mt-5 w-4/5 lg:w-auto ml-3 lg:ml-0" />
             </div>

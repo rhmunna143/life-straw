@@ -163,7 +163,7 @@ const MiddleSlider = () => {
                 <motion.div
                     key={index}
 
-                    className="absolute md:ml-[3rem] left-[-7rem] md:left-16 top-[22rem] md:top-0 md:px-0 w-96 md:w-auto"
+                    className="absolute md:ml-[3rem] left-[-5rem] md:left-16 top-[22rem] md:top-0 md:px-0 w-72 md:w-auto"
 
                     initial={{
                         y: 100,
@@ -187,7 +187,7 @@ const MiddleSlider = () => {
                         <h2 className="text-2xl text-subTitle mt-2">{item.subTitle}</h2>
                         <p className="mt-5 text-primary">{item.description}</p>
                     </div>
-                    <img src={item.rightImg} alt={`slider-${index}`} className="w-auto mt-5 rounded-[33px]" />
+                    <img src={item.rightImg} alt={`slider-${index}`} className="md:w-auto w-80 mt-5 rounded-[33px]" />
                 </motion.div>
             ))}
         </div>

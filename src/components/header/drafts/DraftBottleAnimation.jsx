@@ -80,7 +80,7 @@ const DraftBottleAnimation = () => {
 
                 {/* bottle hidden in large device */}
 
-                <div className="flex lg:hidden mt-96 w-fit mx-auto relative">
+                <div className="flex lg:hidden mt-96 w-fit mx-auto relative right-5 md:-right-0">
                     <img src={gifBottle} alt="bottle gif" className="w-52" />
 
                     {/* bottle bg hidden in large device */}
@@ -112,7 +112,7 @@ const DraftBottleAnimation = () => {
 
                 {/* banner animated text */}
 
-                <motion.div className="left lg:mt-96 mt-20 px-4 md:px-0 w-72 md:w-auto md:mx-0"
+                <motion.div className="left lg:mt-96 mt-20 relative right-5 md:right-0 w-72 md:w-auto md:mx-0"
                     initial={{
                         opacity: 0,
                         x: 250

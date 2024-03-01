@@ -90,7 +90,7 @@ const BottleSliderSection = () => {
     const animationDuration = 4;
 
     return (
-        <div className="mt-[50rem] md:mt-[30rem] lg:mt-8 lg:mb-28 h-screen">
+        <div className="mt-[45rem] md:mt-[30rem] lg:mt-8 lg:mb-28 h-screen">
 
             {/* left side slider */}
             <div className="left left-bg h-screen relative z-50 flex flex-col justify-center">
