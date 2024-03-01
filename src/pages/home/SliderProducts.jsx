@@ -217,7 +217,7 @@ const SliderProducts = () => {
                 </div>
             </div>
 
-            <div className="right-marquee bg-white relative">
+            <div className="right-marquee bg-white relative top-[40rem] md:top-[30rem] lg:top-0 lg:left-0 left-[1rem] md:left-[-15rem]">
                 <h6 className="text-right text-xl tracking-[4px] relative right-12 mb-4">OUR FEATURED GO <br /> SERIES</h6>
                 <div className="h-60 bg-white left-[-8rem]">
 
