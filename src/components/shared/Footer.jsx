@@ -97,7 +97,7 @@ const Footer = () => {
                                 </div>
                             </div>
 
-                            <div className="right grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-8 md:mt-0 gap-5 lg:gap-0">
+                            <div className="right grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 mt-8 md:mt-0 gap-5 lg:gap-0">
                                 <div className="flex flex-col gap-4">
                                     <a className="text-lg font-bold uppercase">Support</a>
                                     <a className="font-medium">Support Centre</a>
