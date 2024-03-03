@@ -215,9 +215,9 @@ const DraftBottleAnimation = () => {
                 </motion.div>
 
 
-                {/* bottle bg flex in large device */}
+                {/* bottle bg visible in large device and hide in small device */}
 
-                <div className="right hidden lg:flex bg-primary text-white lg:relative lg:top-56 lg:right-0 rounded-[33px] h-20 pt-40 md:pr-24 md:pl-40 z-[-10] mx-auto lg:mx-0 px-5 md:px-0 pb-5">
+                <div className="right hidden lg:flex bg-primary text-white lg:relative lg:top-56 lg:right-0 rounded-[33px] h-20 pt-40 md:pr-24 md:pl-24 z-[-10] mx-auto lg:mx-0 px-5 md:px-0 pb-5">
                     <div className="parent flex gap-4">
                         <div className="left">
                             Pure <br />
