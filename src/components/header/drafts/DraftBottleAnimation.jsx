@@ -80,8 +80,8 @@ const DraftBottleAnimation = () => {
 
                 {/* bottle hidden in large device */}
 
-                <div className="flex lg:hidden mt-96 w-fit mx-auto relative">
-                    <img src={gifBottle} alt="bottle gif" className="w-52" />
+                <div className="flex lg:hidden mt-96 mb-10 w-fit mx-auto relative left-[-2rem]">
+                    <img src={gifBottle} alt="bottle gif" className="w-40" />
 
                     {/* bottle bg hidden in large device */}
 
