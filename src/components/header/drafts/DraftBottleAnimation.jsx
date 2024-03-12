@@ -119,7 +119,7 @@ const DraftBottleAnimation = () => {
                 <motion.div className="left lg:mt-96 mt-20 px-4 md:px-0 w-72 md:w-auto md:mx-0"
                     initial={{
                         opacity: 0,
-                        x: 250
+                        x: 180,
                     }}
 
                     whileInView={{
@@ -214,7 +214,8 @@ const DraftBottleAnimation = () => {
                 {/* bottle bg visible in large device and hide in small device */}
 
                 <div className="right hidden lg:flex bg-primary text-white lg:relative lg:top-56 lg:right-0 rounded-[33px] h-20 pt-40 md:pr-24 md:pl-24 z-[-10] mx-auto lg:mx-0 px-5 md:px-0 pb-5">
-                    <div className="parent flex gap-4">
+
+                    <div className="parent flex gap-4 relative left-4">
                         <div className="left">
                             Pure <br />
                             Water
