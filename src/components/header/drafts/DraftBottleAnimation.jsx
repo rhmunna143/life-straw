@@ -11,7 +11,7 @@ import FreeOrderBtn from "../../shared/FreeOrderBtn";
 
 const DraftBottleAnimation = () => {
     const [scrollDown, setScrollDown] = useState(false);
-    const controls = useAnimation();
+    const corkControls = useAnimation();
     const bottleControls = useAnimation();
     const onlyCorkControls = useAnimation();
 
@@ -37,26 +37,28 @@ const DraftBottleAnimation = () => {
     useEffect(() => {
         if (scrollDown) {
             // If scrolled down, reverse the animation
-            controls.start({
+            corkControls.start({
                 rotate: 0,
                 x: 0,
-                y: 80,
+                y: 750,
+                transition: { duration: 4 },
             });
 
             bottleControls.start({
                 rotate: 0,
-                y: 80
+                y: 750,
+                transition: { duration: 4 },
             })
 
             onlyCorkControls.start({
                 opacity: 1,
-                y: 80,
-                transition: { delay: 1.7, duration: 0 }
+                y: 750,
+                transition: { delay: 3.8, duration: 0 }
             })
 
         } else {
             // If not scrolled down, play the forward animation
-            controls.start({
+            corkControls.start({
                 rotate: -19,
                 x: -50,
                 y: -100,
@@ -64,15 +66,17 @@ const DraftBottleAnimation = () => {
             });
 
             bottleControls.start({
-                rotate: -19
+                rotate: -19,
+                y: 0
             })
 
             onlyCorkControls.start({
                 opacity: 0,
-                // transition: {delay: 2}
+                y: 0,
+                transition: { duration: 0 },
             })
         }
-    }, [controls, scrollDown, bottleControls, onlyCorkControls]);
+    }, [corkControls, scrollDown, bottleControls, onlyCorkControls]);
 
     return (
         <Container>
@@ -179,7 +183,7 @@ const DraftBottleAnimation = () => {
                         y: -100
                     }}
 
-                    animate={controls}
+                    animate={corkControls}
 
                     transition={{
                         duration: 2
@@ -196,19 +200,11 @@ const DraftBottleAnimation = () => {
 
                 <motion.div className="cork-2 absolute left-[55%] top-[41%] z-20 hidden lg:flex"
                     initial={{
-                        opacity: 1,
+                        opacity: 0,
                         y: 0
                     }}
 
-                    whileInView={{
-                        opacity: 0
-                    }}
-
                     animate={onlyCorkControls}
-
-                    transition={{
-                        duration: 0
-                    }}
                 >
                     {/*cork image */}
                     <img src={corkOnly} alt="Cork" className="cork-img-2 w-[60%]" />
