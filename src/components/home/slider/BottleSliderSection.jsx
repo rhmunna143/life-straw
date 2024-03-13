@@ -90,10 +90,11 @@ const BottleSliderSection = () => {
     const animationDuration = 4;
 
     return (
-        <div className="mt-[50rem] md:mt-[30rem] lg:mt-8 lg:mb-28 h-screen">
+        <div className="mt-[50rem] md:mt-[30rem] lg:mt-8 lg:mb-28">
 
             {/* left side slider */}
-            <div className="left left-bg h-screen relative z-50 flex flex-col justify-center">
+            <div className="left left-bg py-[350px] relative z-50 flex flex-col justify-center">
+
                 {sliderData.map((item, index) => (
                     <motion.div
                         key={index}
@@ -138,12 +139,12 @@ const BottleSliderSection = () => {
 
 
             {/* right side slider */}
-            <div className="right h-screen relative z-30 right-0 ">
+            <div className="right relative z-30 right-0 ">
                 {
                     sliderData.map((item, index) => (
                         <motion.div
                             key={index}
-                            className="absolute lg:top-[-679px] right-0"
+                            className="absolute lg:top-[-700px] right-0"
 
                             initial={{
                                 opacity: 0,
@@ -160,7 +161,7 @@ const BottleSliderSection = () => {
                                 repeatDelay: animationDuration * (sliderData.length - 1),
                             }}
                         >
-                            <img src={item.rightImg} alt="right slider image" className="lg:w-[55vw] lg:h-screen" />
+                            <img src={item.rightImg} alt="right slider image" className="lg:w-[55vw] h-[700px]" />
                         </motion.div>
                     ))}
             </div>

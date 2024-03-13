@@ -11,7 +11,7 @@ import FreeOrderBtn from "../../shared/FreeOrderBtn";
 
 const DraftBottleAnimation = () => {
     const [scrollDown, setScrollDown] = useState(false);
-    const controls = useAnimation();
+    const corkControls = useAnimation();
     const bottleControls = useAnimation();
     const onlyCorkControls = useAnimation();
 
@@ -37,26 +37,28 @@ const DraftBottleAnimation = () => {
     useEffect(() => {
         if (scrollDown) {
             // If scrolled down, reverse the animation
-            controls.start({
+            corkControls.start({
                 rotate: 0,
                 x: 0,
-                y: 80,
+                y: 750,
+                transition: { duration: 4 },
             });
 
             bottleControls.start({
                 rotate: 0,
-                y: 80
+                y: 750,
+                transition: { duration: 4 },
             })
 
             onlyCorkControls.start({
                 opacity: 1,
-                y: 80,
-                transition: { delay: 1.7, duration: 0 }
+                y: 750,
+                transition: { delay: 3.8, duration: 0 }
             })
 
         } else {
             // If not scrolled down, play the forward animation
-            controls.start({
+            corkControls.start({
                 rotate: -19,
                 x: -50,
                 y: -100,
@@ -64,24 +66,26 @@ const DraftBottleAnimation = () => {
             });
 
             bottleControls.start({
-                rotate: -19
+                rotate: -19,
+                y: 0
             })
 
             onlyCorkControls.start({
                 opacity: 0,
-                // transition: {delay: 2}
+                y: 0,
+                transition: { duration: 0 },
             })
         }
-    }, [controls, scrollDown, bottleControls, onlyCorkControls]);
+    }, [corkControls, scrollDown, bottleControls, onlyCorkControls]);
 
     return (
         <Container>
-            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-20 pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-10rem] mt-[-20rem] z-[-10] w-96 md:w-auto`}>
+            <div className={`bottle-container-2 relative lg:h-screen h-fit mb-20 pb-20 flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between items-center lg:mt-[-5rem] mt-[-20rem] z-[-10] w-96 md:w-auto`}>
 
                 {/* bottle hidden in large device */}
 
-                <div className="flex lg:hidden mt-96 w-fit mx-auto relative">
-                    <img src={gifBottle} alt="bottle gif" className="w-52" />
+                <div className="flex lg:hidden mt-96 mb-10 w-fit mx-auto relative left-[-2rem]">
+                    <img src={gifBottle} alt="bottle gif" className="w-40" />
 
                     {/* bottle bg hidden in large device */}
 
@@ -115,7 +119,7 @@ const DraftBottleAnimation = () => {
                 <motion.div className="left lg:mt-96 mt-20 px-4 md:px-0 w-72 md:w-auto md:mx-0"
                     initial={{
                         opacity: 0,
-                        x: 250
+                        x: 180,
                     }}
 
                     whileInView={{
@@ -179,7 +183,7 @@ const DraftBottleAnimation = () => {
                         y: -100
                     }}
 
-                    animate={controls}
+                    animate={corkControls}
 
                     transition={{
                         duration: 2
@@ -196,29 +200,22 @@ const DraftBottleAnimation = () => {
 
                 <motion.div className="cork-2 absolute left-[55%] top-[41%] z-20 hidden lg:flex"
                     initial={{
-                        opacity: 1,
+                        opacity: 0,
                         y: 0
                     }}
 
-                    whileInView={{
-                        opacity: 0
-                    }}
-
                     animate={onlyCorkControls}
-
-                    transition={{
-                        duration: 0
-                    }}
                 >
                     {/*cork image */}
                     <img src={corkOnly} alt="Cork" className="cork-img-2 w-[60%]" />
                 </motion.div>
 
 
-                {/* bottle bg flex in large device */}
+                {/* bottle bg visible in large device and hide in small device */}
 
-                <div className="right hidden lg:flex bg-primary text-white lg:relative lg:top-56 lg:right-0 rounded-[33px] h-20 pt-40 md:pr-24 md:pl-40 z-[-10] mx-auto lg:mx-0 px-5 md:px-0 pb-5">
-                    <div className="parent flex gap-4">
+                <div className="right hidden lg:flex bg-primary text-white lg:relative lg:top-56 lg:right-0 rounded-[33px] h-20 pt-40 md:pr-24 md:pl-24 z-[-10] mx-auto lg:mx-0 px-5 md:px-0 pb-5">
+
+                    <div className="parent flex gap-4 relative left-4">
                         <div className="left">
                             Pure <br />
                             Water
