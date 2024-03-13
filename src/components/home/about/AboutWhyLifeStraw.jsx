@@ -1,13 +1,11 @@
 import childImg from "../../../assets/images/child-with-water-glass 1.png";
-import bottle from "../../../assets/images/lifestraw1.png";
-import cork from "../../../assets/images/life-straw21.png";
-import onlyCork from "../../../assets/images/life-straw3.png";
 import icon from "../../../assets/icons/Layer_1.svg";
 import { motion } from "framer-motion";
 
+
 const AboutWhyLifeStraw = () => {
     return (
-        <motion.div className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0"
+        <motion.div className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0 relative z-[-200]"
             initial={{
                 y: 300
             }}
@@ -28,64 +26,11 @@ const AboutWhyLifeStraw = () => {
             <div className="right bg-secondaryBg rounded-[33px] py-10 flex flex-col md:flex-row items-center justify-between">
 
 
+                {/* animated bottle here */}
                 <div className="relative hidden md:flex">
-                    {/* animated bottle */}
-
-                    <motion.div className="bottle-img absolute top-[-11rem] z-10"
-                        initial={{
-                            y: -300
-                        }}
-
-                        whileInView={{
-                            y: 0
-                        }}
-
-                        transition={{
-                            duration: 2
-                        }}
-                    >
-                        <img src={bottle} alt="bottle" className="w-44" />
-                    </motion.div>
-
-
-                    {/* animated cork */}
-
-                    <motion.div className="cork-img absolute top-[-15rem] left-9 z-0"
-                        initial={{
-                            y: -400
-                        }}
-
-                        whileInView={{
-                            y: 0
-                        }}
-
-                        transition={{
-                            duration: 2
-                        }}
-                    >
-                        <img src={cork} alt="cork" className="w-32  right-5" />
-                    </motion.div>
-
                     {/* animated cork only */}
 
-                    <motion.div className="cork-img-4 absolute top-[-15rem] left-9 z-20"
-                        initial={{
-                            opacity: 0,
-                            y: 0,
-                        }}
-
-                        whileInView={{
-                            opacity: 1,
-                            y: 0
-                        }}
-
-                        transition={{
-                            duration: 0,
-                            delay: 2
-                        }}
-                    >
-                        <img src={onlyCork} alt="cork" className="w-32  right-5" />
-                    </motion.div>
+                    
                 </div>
 
                 <div className="text text-lg space-y-6 px-2 md:px-0 w-80 md:w-[470px] relative md:pt-28">
